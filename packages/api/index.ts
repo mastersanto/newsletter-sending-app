@@ -1,12 +1,18 @@
 import express from 'express';
+import bodyParser from 'body-parser';
 
+import connectDB from './config/db'
+// import { routes } from './routes';
+import { newsletters } from './features/newsletters';
+
+const PORT = 3001;
 const app = express();
 
-app.use((req, res) => {
-  console.log('Received request for URL:', req.url);
-  res.end('Hello World!');
-});
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+connectDB();
+app.use('/newsletters', newsletters);
 
-app.listen(3000, () => {
-  console.log("The server is running on port 3000!");
+app.listen(PORT, () => {
+  console.log(`The server is running on port ${PORT}!`);
 });

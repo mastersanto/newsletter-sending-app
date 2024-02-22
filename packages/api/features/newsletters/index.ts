@@ -1,0 +1,1 @@
+export { default as newsletters } from './newsletters.route';

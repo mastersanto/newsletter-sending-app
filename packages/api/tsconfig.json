@@ -1,8 +1,9 @@
 {
     "compilerOptions": {
-        "moduleResolution": "NodeNext",
+        "target": "es6",
+        "module": "commonjs",
         "outDir": "build",
         "strict": true,
-        "target": "ESNext"
+        "esModuleInterop": true
     }
 }
