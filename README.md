@@ -1,19 +1,21 @@
-# Create a new directory
-`mkdir newsletter-sending-app && cd newsletter-sending-app`
+# Story newsletter sending
 
-# Create a Node.js workspace with Yarn 4
-`yarn init -2 -pw && yarn set version canary`
+## Setup
 
-# Use the good ol' node_modules
-`yarn config set nodeLinker node-modules`
+install all dependencies for api and app workspaces:
 
-# Ignore artifacts
-`echo "build/\nnode_modules/" >> .gitignore`
+`yarn install`
 
-# Commit
-`git add . && git commit -m "setup monorepo"`
+## Run api
 
-# Create API
+Start server:
 
-# Create App
-`cd workspaces && yarn create react-app`
+`yarn dev-api`
+
+This will start an Express server in port 3001 connected to a Mongo database. You'll be able to check the swagger docs in [localhost:3001/api-docs/](http://localhost:3001/api-docs/).
+
+## Run app
+
+Start app in [localhost:3000](http://localhost:3000):
+
+`run yarn start-app`

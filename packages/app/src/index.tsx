@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { StyledEngineProvider } from '@mui/material/styles';
+import { CssBaseline } from '@mui/material';
 import { Provider } from 'react-redux';
 import store from './store';
 
@@ -8,15 +10,17 @@ import reportWebVitals from './reportWebVitals';
 
 import './index.css';
 
-const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
-);
+const rootElement = document.getElementById('root');
+const root = ReactDOM.createRoot(rootElement!);
 
 root.render(
   <React.StrictMode>
-    <Provider store={store}>
-      <App />
-    </Provider>
+    <StyledEngineProvider injectFirst>
+      <CssBaseline />
+      <Provider store={store}>
+        <App />
+      </Provider>
+    </StyledEngineProvider>
   </React.StrictMode>
 );
 
