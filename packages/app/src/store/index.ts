@@ -1,12 +1,11 @@
-import createSagaMiddleware from '@redux-saga/core';
 import { configureStore } from '@reduxjs/toolkit';
-import rootReducers from './root-reducers';
-
-const sagaMiddleware = createSagaMiddleware();
+import newslettersReducer from './newsletters/newslettersReducer';
 
 const store = configureStore({
-  reducer: {},
-  middleware: [sagaMiddleware],
-});
+    reducer: {
+        newsletters: newslettersReducer
+    }
+})
 
+export type AppDispatch = typeof store.dispatch
 export default store;

@@ -7,6 +7,7 @@
   ],
   "scripts": {
     "build": "yarn workspaces foreach --topological-dev -pi run build",
-    "dev-api": "yarn workspace api dev"
+    "dev-api": "yarn workspace api dev",
+    "start-app": "yarn workspace app start"
   }
 }
